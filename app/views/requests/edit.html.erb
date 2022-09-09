@@ -1,6 +1,30 @@
 <h1>Editing Request</h1>
+<p>
+  <strong>Email:</strong>
+  <%= @request.email %>
+</p>
 
-<%= render 'form', request: @request %>
+<p>
+  <strong>Subject:</strong>
+  <%= @request.subject %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @request.description %>
+</p>
+
+<%= form_with model: @request, url: request_path do |form| %>
+  <p>
+    <strong>State:</strong>
+    <%= form.select :state, options_for_select(["new", "in progress", "done"]) %>
+    <%= @request.state %>
+  </p>
+
+  <div class="actions">
+   <%= form.submit %>
+  </div>
+<% end %>
 
 <%= link_to 'Show', @request %> |
 <%= link_to 'Back', requests_path %>
