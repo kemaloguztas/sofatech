@@ -18,17 +18,12 @@
 
   <div class="field">
     <%= form.label :subject %>
-    <%= form.text_field :subject %>
+    <%= form.select :subject, options_for_select(["Repair", "Access", "Order Request", "Others"]) %>
   </div>
 
   <div class="field">
     <%= form.label :description %>
     <%= form.text_area :description %>
-  </div>
-
-  <div class="field">
-    <%= form.label :state %>
-    <%= form.text_field :state %>
   </div>
 
   <div class="actions">
