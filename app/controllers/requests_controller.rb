@@ -3,7 +3,7 @@ class RequestsController < ApplicationController
 
   # GET /requests or /requests.json
   def index
-    @requests = Request.all
+    @requests = Request.order('created_at DESC')
   end
 
   # GET /requests/1 or /requests/1.json
