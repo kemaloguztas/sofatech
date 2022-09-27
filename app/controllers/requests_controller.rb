@@ -22,7 +22,6 @@ class RequestsController < ApplicationController
   # POST /requests or /requests.json
   def create
     @request = Request.new(request_params)
-
     respond_to do |format|
       if @request.save
         format.html { redirect_to request_url(@request), notice: "Request was successfully created." }
@@ -65,6 +64,6 @@ class RequestsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def request_params
-      params.require(:request).permit(:email, :subject, :description, :state)
+      params.require(:request).permit(:email, :subject, :description, :state, :user_id)
     end
 end
