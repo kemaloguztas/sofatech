@@ -11,10 +11,9 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
-  </div>
+  <h3> Hallo
+    <%= current_user.username %>
+  </h3>
 
   <div class="field">
     <%= form.label :subject %>
@@ -27,6 +26,7 @@
   </div>
 
   <div class="actions">
+    <%= form.hidden_field :user_id, :value => current_user.id %>
     <%= form.submit %>
   </div>
 <% end %>

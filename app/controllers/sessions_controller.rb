@@ -1,18 +1,14 @@
 class SessionsController < ApplicationController
-
     def login
-    end
-
-    def new
         @user = User.new
       end
 
     def create
-        @user = User.find_by(username: params[:username])
+        @user = User.find_by(email: params[:email], password_digest: params[:password_digest]) # hacky solution
 
-        if !!@user && @user.authenticate(session_params[:password])
+        if @user
           session[:user_id] = @user.id
-          redirect_to user_path
+          redirect_to new_request_path
         else
           message = "Login is invalid!"
           redirect_to login_path, notice: message
