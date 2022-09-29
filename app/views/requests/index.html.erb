@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>Name</th>
       <th>Subject</th>
       <th>Description</th>
       <th>State</th>
@@ -16,6 +17,7 @@
   <tbody>
     <% @requests.each do |request| %>
       <tr>
+        <td><%= request.user.username %></td>
         <td><%= request.subject %></td>
         <td><%= request.description %></td>
         <td><%= request.state %></td>

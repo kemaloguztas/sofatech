@@ -1,10 +1,15 @@
 class RequestsController < ApplicationController
+  before_action :redirect_unless_admin, except: %i[new show index create update]
   before_action :redirect_unless_logged_in
   before_action :set_request, only: %i[ show edit update destroy ]
 
   # GET /requests or /requests.json
   def index
-    @requests = Request.order('created_at DESC')
+    if current_user.admin == true
+      @requests = Request.order('created_at DESC')
+    else
+      @requests = Request.where user_id: current_user.id
+    end
   end
 
   # GET /requests/1 or /requests/1.json
@@ -66,6 +71,10 @@ class RequestsController < ApplicationController
     def redirect_unless_logged_in
       redirect_to login_path unless logged_in?
     end
+    
+    def redirect_unless_admin
+      redirect_to requests_path unless current_user.admin == true
+    end 
 
     # Only allow a list of trusted parameters through.
     def request_params
