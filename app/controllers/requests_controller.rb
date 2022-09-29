@@ -1,4 +1,5 @@
 class RequestsController < ApplicationController
+  before_action :redirect_unless_logged_in
   before_action :set_request, only: %i[ show edit update destroy ]
 
   # GET /requests or /requests.json
@@ -60,6 +61,10 @@ class RequestsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_request
       @request = Request.find(params[:id])
+    end
+
+    def redirect_unless_logged_in
+      redirect_to login_path unless logged_in?
     end
 
     # Only allow a list of trusted parameters through.
