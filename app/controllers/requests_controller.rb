@@ -1,7 +1,7 @@
 class RequestsController < ApplicationController
-  before_action :redirect_unless_admin, except: %i[new show index create update]
-  before_action :redirect_unless_logged_in
   before_action :set_request, only: %i[ show edit update destroy ]
+  before_action :redirect_unless_permitted_user, only: %i[ show edit update destroy]
+  before_action :redirect_unless_logged_in
 
   # GET /requests or /requests.json
   def index
@@ -72,8 +72,8 @@ class RequestsController < ApplicationController
       redirect_to login_path unless logged_in?
     end
     
-    def redirect_unless_admin
-      redirect_to requests_path unless current_user.admin == true
+    def redirect_unless_permitted_user
+      redirect_to requests_path unless @request.user_id == current_user.id
     end 
 
     # Only allow a list of trusted parameters through.
