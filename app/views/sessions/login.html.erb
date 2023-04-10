@@ -1,9 +1,10 @@
-<div>
+<div class="login-container">
 
-    <h2>Log in:</h2>
+    <h2>Log <u>in</u></h2>
     <%= form_tag '/login' do %>
-        <h4> Your sofatutor e-mail address: <%= text_field_tag :email %><br></h4>
-        <h4> Password: <%= password_field_tag :password_digest %><br></h4>
+        <i class="icon icon--password"></i>
+        <%= text_field_tag :email, nil, placeholder: 'sofatutor email address' %>
+        <%= password_field_tag :password_digest, nil, placeholder: 'password' %>
         <%= submit_tag "Login" %>
     <% end%>
 </div>
