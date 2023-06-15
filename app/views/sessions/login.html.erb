@@ -1,8 +1,7 @@
 <div class="login-container">
 
-    <h2>Log <u>in</u></h2>
+    <img src="https://dkckbwr4t7ug6.cloudfront.net/assets/application/information/sofaheld/pommes_with_laptop-ce8bdcf22a8ce5b897792e8599f21c3c967aee93b428ec51170ef7c00655c0a7.png" class="login-img">
     <%= form_tag '/login' do %>
-        <i class="icon icon--password"></i>
         <%= text_field_tag :email, nil, placeholder: 'sofatutor email address' %>
         <%= password_field_tag :password_digest, nil, placeholder: 'password' %>
         <%= submit_tag "Login" %>

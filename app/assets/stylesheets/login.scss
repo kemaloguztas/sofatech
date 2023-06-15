@@ -1,8 +1,7 @@
-.icon--password {
-  background-image: url('app/javascript/icons/password.svg');
-  width: 16px;
-  height: 16px;
-  display: inline-block;
+.login-img {
+  margin-top: -181px;
+  width: 200px;
+  height: 200px;
 }
 
 .login-container {
@@ -11,14 +10,15 @@
     border-radius: 5px;
     width: 300px;
     margin: 0 auto;
-    margin-top: 50px;
+    margin-top: 181px;
     text-align: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 34px rgba(0, 0, 0, 0.2);
   }
 
   form {
     display: flex;
     flex-direction: column;
+    margin-top: 20px;
   }
 
   label {
@@ -27,20 +27,21 @@
   }
 
   input {
+    margin: auto;
     width: 200px;
     padding: 8px;
-    margin-bottom: 10px;
+    margin-bottom: 16px;
     border: none;
     border-radius: 3px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   }
 
   input[type="submit"] {
-    background-color: #1f6822;
+    background-color: #9c0;
     color: #fff;
     cursor: pointer;
   }
 
   input[type="submit"]:hover {
-    background-color: #1f6822;
+    background-color: #9c0;
   }
