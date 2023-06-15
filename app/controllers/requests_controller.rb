@@ -5,7 +5,7 @@ class RequestsController < ApplicationController
 
   # GET /requests or /requests.json
   def index
-    if current_user.admin == true
+    if current_user.admin
       @requests = Request.order('created_at DESC')
     else
       @requests = Request.where user_id: current_user.id
@@ -71,10 +71,12 @@ class RequestsController < ApplicationController
     def redirect_unless_logged_in
       redirect_to login_path unless logged_in?
     end
-    
+
     def redirect_unless_permitted_user
-      redirect_to requests_path unless @request.user_id == current_user.id
-    end 
+      unless @request.user_id == current_user.id || current_user.admin?
+        redirect_to requests_path
+      end
+    end
 
     # Only allow a list of trusted parameters through.
     def request_params

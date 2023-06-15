@@ -22,7 +22,7 @@
         <td><%= request.description %></td>
         <td><%= request.state %></td>
         <td><%= request.created_at.strftime('%d %b %Y %H:%M') %></td>
-        <td><%= link_to 'Show', request %></td>
+        <td><%= link_to 'Show', request_path(request) %></td>
         <td><%= link_to 'Edit', edit_request_path(request) %></td>
         <td><%= link_to 'Destroy', request, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
