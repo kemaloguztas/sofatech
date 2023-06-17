@@ -5,34 +5,40 @@
   <link rel="stylesheet" type="text/css" href="show.css">
 </head>
 <body>
-  <table class="container">
+  <%= render partial: 'shared/header' %>
+
+  <div id="show-page">
     <div class="page-banner">
       <h3> Hey, <%= current_user.username + "!" " Danke für deine Anfrage. Wir kümmern uns schnellstmöglich darum!" %> </h3>
     </div>
 
-    <tr class="table-row">
-      <td><strong>Subject:</strong></td>
-      <td><%= @request.subject %></td>
-    </tr>
-    <tr class="table-row">
-      <td><strong>Description:</strong></td>
-      <td><%= @request.description %></td>
-    </tr>
-    <tr class="table-row">
-      <td><strong>State:</strong></td>
-      <td><%= @request.state %></td>
-    </tr>
-    <tr class="table-row">
-      <td><strong>Date:</strong></td>
-      <td><%= @request.created_at.strftime('%d %b %Y %H:%M') %></td>
-    </tr>
-    <tr>
-      <td colspan="2" class="table-row">
-        <%= link_to 'Edit', edit_request_path(@request) %> |
-        <%= link_to 'Requests', requests_path %> |
-        <%= link_to "Log out", logout_path, method: "delete" %>
-      </td>
-    </tr>
-  </table>
+    <table class="container">
+      <tr class="table-row">
+        <td><strong>Subject:</strong></td>
+        <td><%= @request.subject %></td>
+      </tr>
+      <tr class="table-row">
+        <td><strong>Description:</strong></td>
+        <td><%= @request.description %></td>
+      </tr>
+      <tr class="table-row">
+        <td><strong>State:</strong></td>
+        <td><%= @request.state %></td>
+      </tr>
+      <tr class="table-row">
+        <td><strong>Date:</strong></td>
+        <td><%= @request.created_at.strftime('%d %b %Y %H:%M') %></td>
+      </tr>
+      <tr>
+        <td colspan="2" class="table-row">
+          <%= link_to 'Edit', edit_request_path(@request) %> |
+          <%= link_to 'Requests', requests_path %> |
+          <%= link_to "Log out", logout_path, method: "delete" %>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <%= render partial: 'shared/footer' %>
 </body>
 </html>

@@ -48,3 +48,46 @@ a:hover {
   color: #fff;
   background-color: #000;
 }
+
+.page-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #3c3c3c;
+  z-index: 9999;
+}
+
+.page-header .logo {
+  display: inline-block;
+  width: 141px;
+  height: 60px;
+  margin-right: 20px;
+  transition: width .6s ease 0s;
+  background-size: cover;
+  font-size: 0;
+  vertical-align: middle;
+  background: rgba(1,1,1,0) url(/app/assets/images/sofatutor_logo_de.svg) 0 no-repeat;
+}
+
+.page-header .logo img {
+  height: 50px;
+  width: auto;
+}
+
+.page-header h1 {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.footer-header {
+  background-color: #333;
+  color: white;
+  padding: 40px 0 30px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}

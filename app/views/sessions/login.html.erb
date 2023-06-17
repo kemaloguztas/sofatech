@@ -1,9 +1,21 @@
-<div class="login-container">
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Page</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <%= render partial: 'shared/header' %>
 
+  <div class="login-container">
     <img src="https://dkckbwr4t7ug6.cloudfront.net/assets/application/information/sofaheld/pommes_with_laptop-ce8bdcf22a8ce5b897792e8599f21c3c967aee93b428ec51170ef7c00655c0a7.png" class="login-img">
     <%= form_tag '/login' do %>
         <%= text_field_tag :email, nil, placeholder: 'sofatutor email address' %>
         <%= password_field_tag :password_digest, nil, placeholder: 'password' %>
         <%= submit_tag "Login" %>
     <% end%>
-</div>
+  </div>
+
+  <%= render partial: 'shared/footer' %>
+</body>
+</html>
