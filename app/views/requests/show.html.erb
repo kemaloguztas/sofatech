@@ -1,29 +1,38 @@
-<p id="notice"><%= notice %></p>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Show Request</title>
+  <link rel="stylesheet" type="text/css" href="show.css">
+</head>
+<body>
+  <table class="container">
+    <div class="page-banner">
+      <h3> Hey, <%= current_user.username + "!" " Danke für deine Anfrage. Wir kümmern uns schnellstmöglich darum!" %> </h3>
+    </div>
 
-<h3> Danke
-    <%= current_user.username + " für deine Anfrage. Wir kümmern uns schnellstmöglich darum." %>
-  </h3>
-
-<p>
-  <strong>Subject:</strong>
-  <%= @request.subject %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @request.description %>
-</p>
-
-<p>
-  <strong>State:</strong>
-  <%= @request.state %>
-</p>
-
-<p>
-  <strong>Date:</strong>
-  <%= @request.created_at.strftime('%d %b %Y %H:%M') %>
-</p>
-
-<%= link_to 'Edit', edit_request_path(@request) %> |
-<%= link_to 'Requests', requests_path %> |
-<%= link_to "Log out", logout_path, method: "delete" %>
+    <tr class="table-row">
+      <td><strong>Subject:</strong></td>
+      <td><%= @request.subject %></td>
+    </tr>
+    <tr class="table-row">
+      <td><strong>Description:</strong></td>
+      <td><%= @request.description %></td>
+    </tr>
+    <tr class="table-row">
+      <td><strong>State:</strong></td>
+      <td><%= @request.state %></td>
+    </tr>
+    <tr class="table-row">
+      <td><strong>Date:</strong></td>
+      <td><%= @request.created_at.strftime('%d %b %Y %H:%M') %></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="table-row">
+        <%= link_to 'Edit', edit_request_path(@request) %> |
+        <%= link_to 'Requests', requests_path %> |
+        <%= link_to "Log out", logout_path, method: "delete" %>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

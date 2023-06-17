@@ -1,0 +1,71 @@
+/* show.scss */
+
+body {
+    position: relative;
+    background: linear-gradient(180deg,#34a1c5 .04%,#b0e0f0 51.2%);
+    overflow: hidden;
+}
+
+.container {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .table-header {
+    background-color: #95A5A6;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  .table-row {
+    background-color: #ffffff;
+    box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  .page-banner {
+    background: linear-gradient(90deg,#9c0,#009100) 50%/cover no-repeat;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .page-banner h3 {
+    font-size: 24px;
+    margin: 0;
+  }
+
+  .page-banner h3 br {
+    display: none; /* İsteğe bağlı: İki satır arasındaki boşluğu kaldırır */
+  }
+
+  strong {
+    font-weight: bold;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    color: #333;
+    margin: 33px;
+  }
+
+  td, th {
+    padding: 20px;
+  }
+
+  a {
+    color: #000;
+  }
+
+  a:visited {
+    color: #666;
+  }
+
+  a:hover {
+    color: #fff;
+    background-color: #000;
+  }
