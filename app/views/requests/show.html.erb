@@ -9,10 +9,10 @@
 
   <div id="show-page">
     <div class="page-banner">
-      <h3> Hey, <%= current_user.username + "!" " Danke für deine Anfrage. Wir kümmern uns schnellstmöglich darum!" %> </h3>
+      <h3> Hey, <%= current_user.username + "!" " Danke für deine Anfrage." %> <br> <br> Wir kümmern uns schnellstmöglich darum! </h3>
     </div>
 
-    <table class="container">
+    <table class="container-edit">
       <tr class="table-row">
         <td><strong>Subject:</strong></td>
         <td><%= @request.subject %></td>
@@ -30,10 +30,10 @@
         <td><%= @request.created_at.strftime('%d %b %Y %H:%M') %></td>
       </tr>
       <tr>
-        <td colspan="2" class="table-row">
-          <%= link_to 'Edit', edit_request_path(@request) %> |
-          <%= link_to 'Requests', requests_path %> |
-          <%= link_to "Log out", logout_path, method: "delete" %>
+        <table class="options-edit">
+          <%= link_to 'Edit', edit_request_path(@request), class: 'button-edit' %> |
+          <%= link_to 'Requests', requests_path, class: 'button' %> |
+          <%= link_to 'Log out', logout_path, method: :delete, class: 'button' %>
         </td>
       </tr>
     </table>

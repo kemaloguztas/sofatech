@@ -1,7 +1,8 @@
 /* scaffolds.scss */
 
 body {
-  font-family: 'lato', sans-serif;
+  font-family: 'Open Sans',Helvetica,Arial,sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
 .container {
@@ -51,18 +52,20 @@ a:hover {
 
 .page-header {
   position: fixed;
+  padding: 5px 0 10px;
   top: 0;
   left: 0;
   right: 0;
-  background-color: #3c3c3c;
+  background-color: #243b55;
   z-index: 9999;
 }
 
 .page-header .logo {
-  display: inline-block;
+  align-items: center;
+  display: flex;
   width: 141px;
-  height: 60px;
-  margin-right: 20px;
+  height: 50px;
+  margin-left: 60px;
   transition: width .6s ease 0s;
   background-size: cover;
   font-size: 0;
@@ -71,8 +74,9 @@ a:hover {
 }
 
 .page-header .logo img {
-  height: 50px;
-  width: auto;
+  height: 30px;
+  width: 30px;
+  margin-right: 10px;
 }
 
 .page-header h1 {
@@ -81,13 +85,18 @@ a:hover {
 }
 
 .footer-header {
-  background-color: #333;
+  background-color: #141e30 ;
   color: white;
+  font-size: 13px;
   padding: 40px 0 30px;
   text-align: center;
-  position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
   z-index: 9999;
+}
+
+.company-name {
+  color: #009100;
+  font-size: 18px;
 }

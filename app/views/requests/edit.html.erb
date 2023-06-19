@@ -5,31 +5,35 @@
   <link rel="stylesheet" type="text/css" href="edit.css">
 </head>
 <body>
-  <h1>Editing Request</h1>
+  <div class="container">
+    <h1>Editing Request</h1>
 
-  <p>
-    <strong>Subject:</strong>
-    <%= @request.subject %>
-  </p>
-
-  <p>
-    <strong>Description:</strong>
-    <%= @request.description %>
-  </p>
-
-  <%= form_with model: @request, url: request_path do |form| %>
     <p>
-      <strong>State:</strong>
-      <%= form.select :state, options_for_select(["new", "in progress", "done"]) %>
+      <strong>Subject:</strong>
+      <%= @request.subject %>
     </p>
 
-    <div class="actions-edit">
-     <%= form.submit %>
-    </div>
-  <% end %>
+    <p>
+      <strong>Description:</strong>
+      <%= @request.description %>
+    </p>
 
-  <%= link_to 'Show', @request %> |
-  <%= link_to 'Back', requests_path %> |
-  <%= link_to "Log out", logout_path, method: "delete" %>
+    <%= form_with model: @request, url: request_path do |form| %>
+      <p>
+        <strong>State:</strong>
+        <%= form.select :state, options_for_select(["new", "in progress", "done"]) %>
+      </p>
+
+      <div class="actions-edit">
+        <%= form.submit %>
+      </div>
+    <% end %>
+
+    <div class="actions">
+      <%= link_to 'Show', @request %> |
+      <%= link_to 'Back', requests_path %> |
+      <%= link_to "Log out", logout_path, method: "delete" %>
+    </div>
+  </div>
 </body>
 </html>

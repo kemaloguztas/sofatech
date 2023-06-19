@@ -3,12 +3,19 @@
 <head>
   <title>Requests</title>
   <link rel="stylesheet" type="text/css" href="index.css">
+  <script src="index.js"></script>
+  <button id="show-more" style="display: <%= @requests.size > 5 ? 'block' : 'none' %>;">Show More</button>
 </head>
 <body>
   <%= render partial: 'shared/header' %>
 
   <div class="request-container">
     <p id="notice"><%= notice %></p>
+
+    <% unless current_user.admin? %>
+    <%= link_to 'New Request', new_request_path %> |
+    <% end %>
+    <%= link_to "Log out", logout_path, method: "delete" %>
 
     <h1>Requests</h1>
 
@@ -25,8 +32,8 @@
       </thead>
 
       <tbody>
-        <% @requests.each do |request| %>
-          <tr>
+        <% @requests.each_with_index do |request, index| %>
+          <tr <%= 'style="display:none;"' if index >= 5 %>>
             <td><%= request.user.username %></td>
             <td><%= request.subject %></td>
             <td><%= request.description %></td>
@@ -40,10 +47,10 @@
       </tbody>
     </table>
 
-    <br>
-
-    <%= link_to 'New Request', new_request_path %> |
-    <%= link_to "Log out", logout_path, method: "delete" %>
+    <div class="show-more-less">
+      <a href="#" id="show-more">Show More</a>
+      <a href="#" id="show-less" style="display: none;">Show Less</a>
+    </div>
   </div>
 
   <%= render partial: 'shared/footer' %>

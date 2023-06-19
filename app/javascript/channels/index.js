@@ -3,3 +3,34 @@
 
 const channels = require.context('.', true, /_channel\.js$/)
 channels.keys().forEach(channels)
+
+document.addEventListener("DOMContentLoaded", function() {
+    var showItems = 5;
+    var $requests = document.querySelectorAll('.request-container tbody tr');
+    var totalItems = $requests.length;
+
+    hideItems(showItems);
+
+    document.getElementById('show-more').addEventListener('click', function(e) {
+      e.preventDefault();
+      showAllItems();
+      document.getElementById('show-more').style.display = 'none';
+    });
+
+    function hideItems(num) {
+      for (var i = num; i < totalItems; i++) {
+        $requests[i].style.display = 'none';
+      }
+    }
+
+    function showAllItems() {
+      for (var i = 0; i < totalItems; i++) {
+        $requests[i].style.display = '';
+      }
+    }
+  });
+
+
+
+
+
