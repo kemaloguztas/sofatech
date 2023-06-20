@@ -52,7 +52,7 @@ a:hover {
 
 .page-header {
   position: fixed;
-  padding: 5px 0 10px;
+  padding: 10px 0 10px;
   top: 0;
   left: 0;
   right: 0;
@@ -70,7 +70,7 @@ a:hover {
   background-size: cover;
   font-size: 0;
   vertical-align: middle;
-  background: rgba(1,1,1,0) url(/app/assets/images/sofatutor_logo_de.svg) 0 no-repeat;
+  background: rgba(1,1,1,0)
 }
 
 .page-header .logo img {
@@ -89,6 +89,7 @@ a:hover {
   color: white;
   font-size: 13px;
   padding: 40px 0 30px;
+  position: fixed;
   text-align: center;
   bottom: 0;
   left: 0;
