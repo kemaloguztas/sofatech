@@ -1,7 +1,5 @@
-/* scaffolds.scss */
-
 body {
-  font-family: 'Open Sans',Helvetica,Arial,sans-serif;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -33,7 +31,8 @@ table {
   margin: 33px;
 }
 
-td, th {
+td,
+th {
   padding: 10px;
 }
 
@@ -51,8 +50,11 @@ a:hover {
 }
 
 .page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   position: fixed;
-  padding: 10px 0 10px;
+  padding: 10px;
   top: 0;
   left: 0;
   right: 0;
@@ -61,16 +63,16 @@ a:hover {
 }
 
 .page-header .logo {
-  align-items: center;
   display: flex;
+  align-items: center;
   width: 141px;
   height: 50px;
   margin-left: 60px;
-  transition: width .6s ease 0s;
+  transition: width 0.6s ease 0s;
   background-size: cover;
   font-size: 0;
   vertical-align: middle;
-  background: rgba(1,1,1,0)
+  background: rgba(1, 1, 1, 0);
 }
 
 .page-header .logo img {
@@ -82,10 +84,27 @@ a:hover {
 .page-header h1 {
   display: inline-block;
   margin-left: 10px;
+  font-size: 20px;
+  color: #fff;
+}
+
+.logout-button {
+  background-color: #f7f2f2;
+  color: rgb(255, 255, 255);
+  padding: 8px 16px;
+  border-radius: 4px;
+  text-decoration: none;
+  margin-right: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+  background-color: #e53935;
+  color: rgb(255, 255, 255)
 }
 
 .footer-header {
-  background-color: #141e30 ;
+  background-color: #141e30;
   color: white;
   font-size: 13px;
   padding: 40px 0 30px;

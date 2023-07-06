@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Edit Request</title>
-  <link rel="stylesheet" type="text/css" href="edit.css">
-</head>
+<% page_title "Edit Request | sofatech" %>
 <body>
   <div class="container">
     <h1>Editing Request</h1>
@@ -25,15 +20,8 @@
       </p>
 
       <div class="actions-edit">
-        <%= form.submit %>
+        <%= form.submit "Update Status" %>
       </div>
     <% end %>
-
-    <div class="actions">
-      <%= link_to 'Show', @request %> |
-      <%= link_to 'Back', requests_path %> |
-      <%= link_to "Log out", logout_path, method: "delete" %>
-    </div>
   </div>
 </body>
-</html>

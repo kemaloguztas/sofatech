@@ -23,6 +23,11 @@ class RequestsController < ApplicationController
 
   # GET /requests/1/edit
   def edit
+    if current_user.admin?
+      @request = Request.find(params[:id])
+    else
+      redirect_to requests_url
+    end
   end
 
   # POST /requests or /requests.json

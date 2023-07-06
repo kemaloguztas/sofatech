@@ -1,16 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>sofatech</title>
+    <title>
+      <%= yield(:page_title) %>
+    </title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <link rel="stylesheet" type="text/css" href="edit.css">
+    <script src="index.js"></script>
+    <link rel="stylesheet" type="text/css" href="show.css">
+    <%= render partial: 'shared/header' %>
   </head>
 
   <body>
     <%= yield %>
+    <%= render partial: 'shared/footer' %>
   </body>
 </html>

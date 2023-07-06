@@ -1,12 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Login Page</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
-</head>
+<% page_title "Log in to sofatech | sofatech" %>
 <body>
-  <%= render partial: 'shared/header' %>
-
   <div class="login-container">
     <img src="https://dkckbwr4t7ug6.cloudfront.net/assets/application/information/sofaheld/pommes_with_laptop-ce8bdcf22a8ce5b897792e8599f21c3c967aee93b428ec51170ef7c00655c0a7.png" class="login-img">
     <%= form_tag '/login' do %>
@@ -15,7 +8,4 @@
         <%= submit_tag "Login" %>
     <% end%>
   </div>
-
-  <%= render partial: 'shared/footer' %>
 </body>
-</html>

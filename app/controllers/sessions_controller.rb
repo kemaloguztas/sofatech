@@ -10,8 +10,7 @@ class SessionsController < ApplicationController
         session[:user_id] = @user.id
         @user.admin == true ? redirect_to(requests_path) : redirect_to(new_request_path)
       else
-        message = "Login is invalid!"
-        redirect_to login_path, notice: message
+        redirect_to login_path
       end
     end
 
